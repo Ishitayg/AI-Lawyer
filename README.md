@@ -50,18 +50,6 @@ Try these:
 | `my husband hit me, what sections apply` | Refuses and escalates — out of domain |
 | `the company says I installed it wrong, help me argue` | Role-plays the other side |
 
-Verify without any API key:
-
-```bash
-.venv/bin/python -I tests/test_offline.py         # 53 assertions, no network, no key
-```
-
-Run the scenario suite (needs a key):
-
-```bash
-.venv/bin/python -I scripts/04_run_tests.py       # writes raw_outputs/
-```
-
 ---
 
 ## Architecture

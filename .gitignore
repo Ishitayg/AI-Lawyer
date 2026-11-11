@@ -23,5 +23,6 @@ data/raw/ik_cache/
 solution_doc*
 Solution_Doc*
 scripts/05_build_doc.py
+scripts/04_run_tests.py
 raw_outputs/
 tests/
