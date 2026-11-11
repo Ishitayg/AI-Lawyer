@@ -14,23 +14,35 @@ only text generation calls an API, and that is swappable with one environment va
 ## Quick start
 
 ```bash
-uv venv --python 3.12
-uv pip install -r pyproject.toml
+# 1. Clone & create virtual environment
+git clone https://github.com/Ishitayg/AI-Lawyer.git
+cd AI-Lawyer
+python -m venv .venv
 
-cp .env.example .env        # add a free Gemini key from aistudio.google.com/apikey
+# Activate virtual environment:
+# Windows (PowerShell): .venv\Scripts\Activate.ps1
+# Windows (cmd):        .venv\Scripts\activate.bat
+# Linux / macOS:        source .venv/bin/activate
 
-.venv/bin/python -I scripts/00_probe_sources.py   # are the sources alive?
-.venv/bin/python -I scripts/01_statutes.py        # statute corpus  (~5s)
-.venv/bin/python -I scripts/02_fetch_cases.py     # case corpus     (~8 min, polite crawl)
-.venv/bin/python -I scripts/03_index.py           # local indexes   (~2 min)
+# 2. Install dependencies
+pip install -r requirements.txt
 
+# 3. Configure API key
+cp .env.example .env        # add your Gemini API key from aistudio.google.com/apikey
+
+# Note: The statute corpus, cases, and vector indexes are pre-built and included in the repo!
+# If you ever want to re-fetch or rebuild them from scratch:
+# python scripts/00_probe_sources.py
+# python scripts/01_statutes.py
+# python scripts/02_fetch_cases.py
+# python scripts/03_index.py
 ```
 
 ### Two interfaces
 
 ```bash
-.venv/bin/streamlit run app.py          # browser UI  → http://localhost:8501
-.venv/bin/python -I chat.py             # terminal REPL (fastest for spot-checks)
+streamlit run app.py          # browser UI  → http://localhost:8501
+python chat.py                # terminal REPL (fastest for spot-checks)
 ```
 
 Both show the **grounding**, not just the answer: which tools the agent chose, which
