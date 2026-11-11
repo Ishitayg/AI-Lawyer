@@ -1,0 +1,27 @@
+# Virtual environment & Python caches
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+__MACOSX/
+
+# Environment and secrets — never commit
+.env
+client_secret_*.json
+*credentials*.json
+
+# Logs
+logs/
+
+# Raw crawler cache
+data/raw/ik_cache/
+
+# Excluded per user request
+*assignment*.pdf
+*Assignment*.pdf
+*.pdf
+solution_doc*
+Solution_Doc*
+scripts/05_build_doc.py
+raw_outputs/
+tests/

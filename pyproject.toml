@@ -1,0 +1,23 @@
+[project]
+name = "ai-lawyer"
+version = "0.1.0"
+description = "Local-first AI lawyer for Indian consumer disputes (CPA 2019) with grounded RAG + tool-calling agent"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.1",
+    "requests>=2.32",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.3",
+    "pypdf>=5.1",
+    "pandas>=2.2",
+    "pyarrow>=18.0",
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=3.3",
+    "streamlit>=1.40",
+    "google-genai>=0.3",
+    "python-dotenv>=1.0",
+    "pyyaml>=6.0",
+]
+
+[tool.setuptools]
+packages = ["src"]
